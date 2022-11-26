@@ -30,6 +30,6 @@ export class HeaderComponent {
   }
 
   onClearCart():void{
-
+    this.cartService.clearCart();
   }
 }
