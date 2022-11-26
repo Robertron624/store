@@ -17,7 +17,6 @@
       </div>
       <div *ngIf="cart.items.length" class="py-3">
         <div *ngFor="let item of cart.items" class="flex justify-between font-light mb-2">
-          
           {{item.name}} x {{item.quantity}}
           <span class="font-bold">{{ item.price | currency }}</span>
         </div>
@@ -27,7 +26,9 @@
         <span class="font-bold">{{ getTotal(cart.items) | currency }}</span>
       </div>
       <div class="py-3 flex justify-between">
-        <button class="bg-rose-600 text-white rounded-full w-9 h-9">
+        <button 
+        (click)="onClearCart()"
+        class="bg-rose-600 text-white rounded-full w-9 h-9">
           <mat-icon>remove_shopping_cart</mat-icon>
         </button>
         <button
